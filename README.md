@@ -77,36 +77,13 @@ Hard mode used range 1–50, which is a *smaller* search space than Normal's 1�
 
 ### ✅ pytest results — 14/14 tests passing
 
-```
-============================= test session starts ==============================
-platform linux -- Python 3.12.3, pytest-9.0.2
-collected 14 items
+![pytest Results](pytest_results.png)
 
-test_game_logic.py::test_winning_guess                          PASSED [  7%]
-test_game_logic.py::test_guess_too_high                         PASSED [ 14%]
-test_game_logic.py::test_guess_too_low                          PASSED [ 21%]
-test_game_logic.py::test_high_guess_returns_too_high_not_too_low PASSED [ 28%]
-test_game_logic.py::test_low_guess_returns_too_low_not_too_high PASSED [ 35%]
-test_game_logic.py::test_check_guess_win_with_int_types         PASSED [ 42%]
-test_game_logic.py::test_check_guess_handles_boundary_values    PASSED [ 50%]
-test_game_logic.py::test_attempts_starts_at_zero                PASSED [ 57%]
-test_game_logic.py::test_hard_range_is_wider_than_normal        PASSED [ 64%]
-test_game_logic.py::test_easy_range_is_narrower_than_normal     PASSED [ 71%]
-test_game_logic.py::test_parse_guess_valid_integer              PASSED [ 78%]
-test_game_logic.py::test_parse_guess_empty_string               PASSED [ 85%]
-test_game_logic.py::test_parse_guess_non_numeric                PASSED [ 92%]
-test_game_logic.py::test_parse_guess_decimal_rounds_to_int      PASSED [100%]
-
-============================== 14 passed in 0.04s ==============================
-```
-
-> 📷 Replace this block with a screenshot of your terminal after running `pytest test_game_logic.py -v`
 
 ### ✅ Fixed game — winning is now possible
 
-> 📷 Insert a screenshot of your fixed, winning game here (the "🎉 You won!" screen with balloons)
+![Winning Game](winning_game.png)
 
----
 
 ## 🗂️ Project Structure
 
@@ -116,8 +93,13 @@ test_game_logic.py::test_parse_guess_decimal_rounds_to_int      PASSED [100%]
 ├── logic_utils.py      # All game logic (check_guess, parse_guess, etc.)
 ├── test_game_logic.py  # pytest suite — 14 tests covering all fixed bugs
 ├── requirements.txt
-├── reflection.md       # Full debugging + AI collaboration write-up
+├── reflection.md    # Full debugging + AI collaboration write-up
+├── pytest_results.png
+├── winning_game.png  
 └── README.md
+
+
+
 ```
 
 ---
