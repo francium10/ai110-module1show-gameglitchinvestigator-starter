@@ -28,7 +28,7 @@ pip install -r requirements.txt
 python -m streamlit run app.py
 
 # 4. Run the test suite
-pytest test_game_logic.py -v
+pytest tests/test_game_logic.py -v
 ```
 
 ---
@@ -40,7 +40,7 @@ pytest test_game_logic.py -v
 | 1 | Play the broken game and find the bugs | ✅ Found 4 bugs |
 | 2 | Identify the state / session bug | ✅ Type-switching secret on even attempts |
 | 3 | Fix the backwards hints | ✅ `Too High` → "Go LOWER", `Too Low` → "Go HIGHER" |
-| 4 | Refactor logic into `logic_utils.py` and pass all tests | ✅ 14/14 tests passing |
+| 4 | Refactor logic into `logic_utils.py` and pass all tests | ✅ 34/34 tests passing |
 
 ---
 
@@ -75,31 +75,34 @@ Hard mode used range 1–50, which is a *smaller* search space than Normal's 1�
 
 ## 📸 Demo
 
-### ✅ pytest results — 14/14 tests passing
-
-![pytest Results](pytest_results.png)
-
-
 ### ✅ Fixed game — winning is now possible
 
 ![Winning Game](winning_game.png)
 
+### ✅ pytest results — 14/14 core tests passing
+
+![pytest Results](pytest_results.png)
+
+
+### ✅ Challenge 1 — Edge-case tests: 34/34 passing
+
+![Challenge 1 Edge Case Tests](challenge1_pytest.png)
 
 ## 🗂️ Project Structure
 
 ```
 .
-├── app.py              # Streamlit UI — no game logic here
-├── logic_utils.py      # All game logic (check_guess, parse_guess, etc.)
-├── test_game_logic.py  # pytest suite — 14 tests covering all fixed bugs
+├── app.py                  # Streamlit UI — no game logic here
+├── logic_utils.py          # All game logic (check_guess, parse_guess, etc.)
 ├── requirements.txt
-├── reflection.md    # Full debugging + AI collaboration write-up
-├── pytest_results.png
-├── winning_game.png  
-└── README.md
-
-
-
+├── reflection.md           # Full debugging + AI collaboration write-up
+├── README.md
+├── winning_game.png        # Screenshot: winning game screen
+├── pytest_results.png      # Screenshot: 14 core tests passing
+├── challenge1_pytest.png   # Screenshot: 34 edge-case tests passing
+└── tests/
+    ├── conftest.py         # sys.path fix so pytest finds logic_utils
+    └── test_game_logic.py  # pytest suite — 34 tests covering all bugs + edge cases
 ```
 
 ---
@@ -109,7 +112,6 @@ Hard mode used range 1–50, which is a *smaller* search space than Normal's 1�
 - [ ] Add a leaderboard using `st.session_state` to track scores across rounds
 - [ ] Add a timer to score faster guesses higher
 - [ ] Add difficulty-aware max attempts display that updates live
-- [ ] [Insert a screenshot of your Enhanced Game UI here if completed]
 
 ---
 
