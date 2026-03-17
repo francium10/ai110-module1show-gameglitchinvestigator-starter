@@ -14,6 +14,7 @@ from logic_utils import (
 st.set_page_config(page_title="Glitchy Guesser", page_icon="🎮")
 
 st.title("🎮 Game Glitch Investigator")
+st.caption("A number guessing game — fixed and refactored by Francium Lufwendo")
 
 
 st.sidebar.header("Settings")
@@ -154,4 +155,5 @@ if submit:
             )
 
 st.divider()
-st.caption("Bugs squashed. This one's actually production-ready. ✅")
+st.caption(
+    "Bugs squashed. This one's actually production-ready.CodePath AI110 · Module 1 ✅")
